@@ -16,7 +16,7 @@ public class TestBase {
 	public static WebDriver driver;
 
 	public static void initDriver() {
-		System.setProperty("webdriver.chrome.driver", ".\\drivers\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "/Users/comet/Selenium/ChromeDriver/chromedriver");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
