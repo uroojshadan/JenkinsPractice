@@ -19,10 +19,10 @@ public class TestBase {
 
 	public static void initDriver() {
 		System.setProperty("webdriver.chrome.driver", "/Users/comet/Selenium/ChromeDriver/chromedriver");
-		ChromeOptions options=new ChromeOptions();
-		options.addArguments("headless");
-		//driver.manage().window().setSize(new Dimension(1440,900));
-		driver = new ChromeDriver(options);
+		driver = new ChromeDriver();
+//		ChromeOptions options=new ChromeOptions();
+//		options.addArguments("headless");
+//		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
