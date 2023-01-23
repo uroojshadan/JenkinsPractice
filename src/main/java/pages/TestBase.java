@@ -6,10 +6,12 @@ import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class TestBase {
 
@@ -17,6 +19,9 @@ public class TestBase {
 
 	public static void initDriver() {
 		System.setProperty("webdriver.chrome.driver", "/Users/comet/Selenium/ChromeDriver/chromedriver");
+		ChromeOptions options=new ChromeOptions();
+		options.addArguments("headless");
+		driver.manage().window().setSize(new Dimension(1440,900));
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
