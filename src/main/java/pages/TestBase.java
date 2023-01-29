@@ -6,20 +6,28 @@ import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class TestBase {
 
 	public static WebDriver driver;
+	static String browser;
 
 	public static void initDriver() {
-		System.setProperty("webdriver.chrome.driver", "/Users/comet/Selenium/ChromeDriver/chromedriver");
-		driver = new ChromeDriver();
+
+		browser = System.getProperty("browser");
+
+		if (browser.equalsIgnoreCase("chrome")) {
+			System.setProperty("webdriver.chrome.driver", "/Users/comet/Selenium/Drivers/chromedriver");
+			driver = new ChromeDriver();
+		} else if (browser.equalsIgnoreCase("firefox")) {
+			System.setProperty("webdriver.gecko.driver", "/Users/comet/Selenium/Drivers/geckodriver");
+			driver = new FirefoxDriver();
+		}
 //		ChromeOptions options=new ChromeOptions();
 //		options.addArguments("headless");
 //		driver = new ChromeDriver(options);
@@ -41,4 +49,3 @@ public class TestBase {
 	}
 
 }
-
