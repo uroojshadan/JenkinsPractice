@@ -28,6 +28,8 @@ public class TestBase {
 			System.setProperty("webdriver.gecko.driver", "/Users/comet/Selenium/Drivers/geckodriver");
 			driver = new FirefoxDriver();
 		}
+//		System.setProperty("webdriver.chrome.driver", "/Users/comet/Selenium/Drivers/chromedriver");
+//		driver = new ChromeDriver();
 //		ChromeOptions options=new ChromeOptions();
 //		options.addArguments("headless");
 //		driver = new ChromeDriver(options);
