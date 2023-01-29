@@ -1,8 +1,10 @@
 package pages;
 
 import java.io.File;
+import java.io.InputStreamReader;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
@@ -16,11 +18,8 @@ public class TestBase {
 
 	public static WebDriver driver;
 	static String browser;
-
 	public static void initDriver() {
-
-		browser = System.getProperty("browser");
-
+		
 		if (browser.equalsIgnoreCase("chrome")) {
 			System.setProperty("webdriver.chrome.driver", "/Users/comet/Selenium/Drivers/chromedriver");
 			driver = new ChromeDriver();
