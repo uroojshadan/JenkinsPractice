@@ -20,6 +20,7 @@ public class TestBase {
 	static String browser;
 	public static void initDriver() {
 		
+		browser=System.getProperty("browser");
 		if (browser.equalsIgnoreCase("chrome")) {
 			System.setProperty("webdriver.chrome.driver", "/Users/comet/Selenium/Drivers/chromedriver");
 			driver = new ChromeDriver();
